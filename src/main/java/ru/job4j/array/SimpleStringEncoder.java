@@ -10,13 +10,15 @@ public class SimpleStringEncoder {
                 counter++;
             } else {
                 if (counter != 1) {
-                    result += input.charAt(i - 1) + Integer.toString(counter);
+                    result += symbol + Integer.toString(counter);
                     counter = 1;
+                    symbol = input.charAt(i);
                 } else {
-                    result += input.charAt(i - 1);
+                    result += symbol;
+                    symbol = input.charAt(i);
                 }
             }
-            symbol = input.charAt(i);
+
         }
         if (counter != 1) {
             result += input.charAt(input.length() - 1) + Integer.toString(counter);
