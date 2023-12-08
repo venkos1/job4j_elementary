@@ -8,13 +8,13 @@ public class TwoNumberSum {
             if (array[i] + array[j] == target) {
                 return new int[]{i, j};
             } else {
-                if (array[i] + array[j] < target) {
-                    i++;
-                } else {
-                    j--;
+                if (j - i == 1 && i != 0) {
+                   j--;
+                   i = array.length - (j + 2);
+                }
+                i++;
                 }
             }
-        }
         return new int[0];
     }
 }
